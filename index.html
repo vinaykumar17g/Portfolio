@@ -303,7 +303,7 @@
                 <h2 class="typed-text"></h2>
                 <p>Full Stack Developer and Faculty at KCRI College, passionate about teaching and building innovative solutions</p>
                 <div class="social-links">
-                    <a href="https://github.com/vinaygupta17g" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/vinaykmar17g" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/vinay-kumar-184320251/" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://www.hackerrank.com/profile/vk1230460" target="_blank"><i class="fab fa-hackerrank"></i></a>
                     <a href="https://stackoverflow.com/users/23591740/vinay-kumar" target="_blank"><i class="fab fa-stack-overflow"></i></a>
@@ -11625,28 +11625,30 @@ Error generating stack: ` +
             title: "VSAT SAARTHI",
             desc: "Satellite tracking tool using user location and integrated compass for precise positioning.",
             tags: ["Android", "Java", "Firebase"],
-            href: "https://github.com/vinaygupta17g/VSAT-Saarthi",
+            href: "https://github.com/vinaykumar17g/VSAT-Saarthi",
           },
           {
             emoji: "\uD83D\uDCE1",
             title: "SATELLITE DETAIL",
             desc: "Spring Boot API with MySQL database to fetch satellite details, including longitude, latitude, and altitude for precise tracking.",
             tags: ["Spring Boot", "MySQL", "Java"],
-            href: "https://github.com/vinaygupta17g/Satellite-Detail",
+            href: "https://github.com/vinaykumar17g/Satellite-Detail",
           },
           {
             emoji: "\uD83D\uDCAC",
             title: "CHATAPP",
             desc: "Mobile application enabling seamless messaging and social connectivity through chat and follow features.",
             tags: ["Android", "Java", "Firebase"],
-            href: "https://github.com/vinaygupta17g/ChatApp",
+            href: "ChatApp.apk",
+            cta: "Download Demo APK",
+            download: true,
           },
           {
             emoji: "\uD83C\uDF54",
             title: "FOOD APP",
             desc: "Android food ordering app with cart functionality, intuitive UI/UX, and Android SDK integration.",
             tags: ["Android", "Java", "SQLite"],
-            href: "https://github.com/vinaygupta17g/Food-App",
+            href: "https://github.com/vinaykumar17g/Food-App",
           },
           {
             emoji: "\uD83E\uDDEE",
@@ -11675,8 +11677,9 @@ Error generating stack: ` +
             title: "Online Exam App",
             desc: "An Android online examination application for taking and managing exams digitally.",
             tags: ["Android", "Java", "Online Examination"],
-            href: "mailto:vk1230460@gmail.com?subject=Online%20Exam%20App",
-            cta: "Ask about the app",
+            href: "online-exam.apk",
+            cta: "Download Demo APK",
+            download: true,
           },
         ],
         Xm = [
@@ -12294,6 +12297,7 @@ Error generating stack: ` +
                                 P("a", {
                                   className: "project-link",
                                   href: p.href,
+                                  download: p.download || void 0,
                                   target: "_blank",
                                   rel: "noopener",
                                   children: [
