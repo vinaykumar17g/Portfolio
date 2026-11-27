@@ -12113,7 +12113,7 @@ Error generating stack: ` +
                           m("div", {
                             className: "avatar",
                             children: m("img", {
-                              src: "WhatsApp Image 2025-06-07 at 21.28.50_f71f4fb4.jpg",
+                              src: "photo.jpg",
                               alt: "Er. Vinay Kumar",
                             }),
                           }),
@@ -12669,5 +12669,55 @@ Error generating stack: ` +
         };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+      (function () {
+        const photos = [
+          "photo.jpg",
+          "photo1.jpg",
+          "photo2.jpg",
+          "photo3.jpg",
+          "photo4.jpg",
+          "WhatsApp Image 2025-06-07 at 21.28.50_f71f4fb4.jpg",
+        ];
+
+        photos.forEach((src) => {
+          const preload = new Image();
+          preload.src = src;
+        });
+
+        function startPhotoRotation() {
+          const image = document.querySelector(".avatar img");
+          if (!image || image.dataset.rotationStarted) return false;
+
+          image.dataset.rotationStarted = "true";
+          image.style.transition = "opacity 250ms ease";
+          let current = photos.findIndex(
+            (src) => new URL(src, document.baseURI).href === image.src,
+          );
+          if (current < 0) current = 0;
+
+          window.setInterval(() => {
+            image.style.opacity = "0";
+            window.setTimeout(() => {
+              current = (current + 1) % photos.length;
+              image.src = photos[current];
+              image.style.opacity = "1";
+            }, 250);
+          }, 5000);
+
+          return true;
+        }
+
+        if (!startPhotoRotation()) {
+          const root = document.getElementById("root");
+          if (root) {
+            const observer = new MutationObserver(() => {
+              if (startPhotoRotation()) observer.disconnect();
+            });
+            observer.observe(root, { childList: true, subtree: true });
+          }
+        }
+      })();
+    </script>
   </body>
 </html>
